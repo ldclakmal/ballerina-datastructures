@@ -7,7 +7,7 @@ type Node record {|
 
 // TODO: Prevent inserting the `()` as the value.
 
-# Doubly linked list implementation with all the operations. Operations that index into the list will traverse the list
+# Doubly linked list implementation with its operations. Operations that index into the list will traverse the list
 # from the beginning or the end, whichever is closer to the specified index.
 # Note that this implementation is not synchronized. If multiple threads access a linked list concurrently, and at least
 # one of the threads modifies the list structurally, it must be synchronized externally.
