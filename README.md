@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/ldclakmal/ballerina-datastructures.svg?branch=master)](https://travis-ci.com/ldclakmal/ballerina-datastructures) [![CI](https://github.com/ldclakmal/ballerina-datastructures/workflows/CI/badge.svg)](https://github.com/ldclakmal/ballerina-datastructures/actions?query=workflow%3ACI) [![Deployment](https://github.com/ldclakmal/ballerina-datastructures/workflows/Deployment/badge.svg)](https://github.com/ldclakmal/ballerina-datastructures/actions?query=workflow%3ADeployment)
+
 # Ballerina Data Structures
 
 This module provides set of data structures written by [Ballerina](https://ballerina.io) programming language.
