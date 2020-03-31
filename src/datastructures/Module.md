@@ -11,12 +11,12 @@ This module provides common data structures written by [Ballerina](https://balle
 
 A linked list is a linear collection of data elements, whose order is not given by their physical placement in memory. Instead, each element points to the next. It is a data structure consisting of a collection of nodes which together represent a sequence. In its most basic form, each node contains: data, and a reference (in other words, a link) to the next node in the sequence.
 
-This module provides a doubly linked list implementation with its operations. Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index.
+This provides a doubly linked list implementation with its operations. Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index.
 Note that this implementation is not synchronized. If multiple threads access a linked list concurrently, and at least one of the threads modifies the list structurally, it must be synchronized externally.
 
 ### API Guide
 
-First, import the `ldclakmal/linkedlist` module into the Ballerina project.
+First, import the `ldclakmal/datastructures` module into the Ballerina project.
 
 ```ballerina
 import ldclakmal/datastructures as ds;
@@ -134,7 +134,6 @@ public function print() returns string;
 ### Examples
 
 ```ballerina
-import ballerina/io;
 import ballerina/test;
 import ldclakmal/datastructures as ds;
 
