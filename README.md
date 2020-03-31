@@ -2,11 +2,9 @@
 
 # Ballerina Data Structures
 
-This module provides set of data structures written by [Ballerina](https://ballerina.io) programming language.
+This module provides common data structures written by [Ballerina](https://ballerina.io) programming language.
 
-1. Linked List
-
-## Compatibility
+#### Compatibility
 |                    | Version      |
 |:------------------:|:------------:|
 | Ballerina Language | 1.2.0        |
@@ -39,69 +37,95 @@ All the APIs with documentation can be found below:
 #
 # + return - Value of the head of the list, of `()` if the list is empty
 public function getFirst() returns anydata;
+```
 
+```ballerina
 # Returns the last element in this list.
 #
 # + return - Value of the tail of the list, of `()` if the list is empty
 public function getLast() returns anydata;
+```
 
+```ballerina
 # Return the element at the specified index, if index is valid.
 #
 # + index - Index of the list, starting from 0
 # + return - Value of the element or `()` if the list is empty or index is invalid
 public function getByIndex(int index) returns anydata;
+```
 
+```ballerina
 # Inserts the specified element at the beginning of this list.
 #
 # + value - Value to be inserted
 public function addFirst(anydata value);
+```
 
+```ballerina
 # Appends the specified element to the end of this list.
 #
 # + value - Value to be inserted
 public function addLast(anydata value);
+```
 
+```ballerina
 # Appends the specified element to the specified index of the list.
 #
 # + value - Value to be inserted
 # + index - Index of the list, starting from 0
 public function addByIndex(anydata value, int index);
+```
 
+```ballerina
 # Removes and returns the first element from this list.
 #
 # + return - Value of the first element or `()` if the list is empty
 public function removeFirst() returns anydata;
+```
 
+```ballerina
 # Removes and returns the last element from this list.
 #
 # + return - Value of the last element or `()` if the list is empty
 public function removeLast() returns anydata;
+```
 
+```ballerina
 # Removes the specified element from this list, if it is present.
 #
 # + value - Value to be removed
 public function remove(anydata value);
+```
 
+```ballerina
 # Removes the element at the specified index from this list, if index is valid.
 #
 # + index - Index of the list, starting from 0
 # + return - Value of the removed element or `()` if the list is empty or index is invalid
 public function removeByIndex(int index) returns anydata;
+```
 
+```ballerina
 # Returns true if this list contains the specified element.
 #
 # + value - Value to be checked for
 # + return - `true` if the list contains the specified, `false` otherwise
 public function contains(anydata value) returns boolean;
+```
 
+```ballerina
 # Return the size (no of elements) of the list.
 #
 # + return - The size of the list
 public function size() returns int;
+```
 
+```ballerina
 # Removes all of the elements from this list.
 public function clear();
+```
 
+```ballerina
 # Prints the complete linked list with head and tail in following pattern.
 # '[HEAD] 6 -> 2 -> 1 -> 4 -> 5 [TAIL]'
 #
