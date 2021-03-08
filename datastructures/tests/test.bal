@@ -9,9 +9,7 @@ function testEmptyLinkedList() {
     test:assertEquals(list.size(), 0);
 }
 
-@test:Config {
-    dependsOn: ["testEmptyLinkedList"]
-}
+@test:Config {}
 function testLinkedListForOneElement() {
     LinkedList list = new;
     list.addFirst(10);
@@ -21,9 +19,7 @@ function testLinkedListForOneElement() {
     test:assertEquals(list.size(), 1);
 }
 
-@test:Config {
-    dependsOn: ["testLinkedListForOneElement"]
-}
+@test:Config {}
 function testLinkedListForMultipleElements() {
     LinkedList list = new;
     list.addFirst(1);
@@ -40,9 +36,7 @@ function testLinkedListForMultipleElements() {
     test:assertEquals(list.size(), 7);
 }
 
-@test:Config {
-    dependsOn: ["testLinkedListForMultipleElements"]
-}
+@test:Config {}
 function testLinkedListForAllOperations() {
     LinkedList list = new;
     list.addFirst(1);

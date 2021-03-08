@@ -1,13 +1,13 @@
-[![Build Status](https://travis-ci.com/ldclakmal/ballerina-datastructures.svg?branch=master)](https://travis-ci.com/ldclakmal/ballerina-datastructures) [![CI](https://github.com/ldclakmal/ballerina-datastructures/workflows/CI/badge.svg)](https://github.com/ldclakmal/ballerina-datastructures/actions?query=workflow%3ACI) [![Deployment](https://github.com/ldclakmal/ballerina-datastructures/workflows/Deployment/badge.svg)](https://github.com/ldclakmal/ballerina-datastructures/actions?query=workflow%3ADeployment)
-
 # Ballerina Data Structures
+
+[![Build](https://github.com/ldclakmal/ballerina-datastructures/actions/workflows/master.yml/badge.svg)](https://github.com/ldclakmal/ballerina-datastructures/actions/workflows/master.yml)
 
 This module provides common data structures written by [Ballerina](https://ballerina.io) programming language.
 
 #### Compatibility
-|                    | Version      |
-|:------------------:|:------------:|
-| Ballerina Language | 1.2.0        |
+|                    | Version           |
+|:------------------:|:-----------------:|
+| Ballerina Language | Swan Lake Alpha 1 |
 
 ## 1. Linked List
 

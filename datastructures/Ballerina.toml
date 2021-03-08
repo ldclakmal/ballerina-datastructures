@@ -1,7 +1,7 @@
-[project]
-org-name = "ldclakmal"
-version = "1.0.0"
+[package]
+org = "ldclakmal"
+name = "datastructures"
+version = "1.1.0"
 authors = ["Chanaka Lakmal"]
-keywords = ["datastructures", "linkedlist"]
 repository = "https://github.com/ldclakmal/ballerina-datastructures"
 license = ["Apache-2.0"]

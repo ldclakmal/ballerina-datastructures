@@ -11,16 +11,16 @@ type Node record {|
 # from the beginning or the end, whichever is closer to the specified index.
 # Note that this implementation is not synchronized. If multiple threads access a linked list concurrently, and at least
 # one of the threads modifies the list structurally, it must be synchronized externally.
-public type LinkedList object {
+public class LinkedList {
 
     Node? head;
     Node? tail;
-    int size;
+    int capacity;
 
-    public function __init() {
+    public function init() {
         self.head = ();
         self.tail = ();
-        self.size = 0;
+        self.capacity = 0;
     }
 
     # Returns the first element in this list.
@@ -50,11 +50,11 @@ public type LinkedList object {
     # + index - Index of the list, starting from 0
     # + return - Value of the element or `()` if the list is empty or index is invalid
     public function getByIndex(int index) returns anydata {
-        if (index < 0 || index >= self.size) {
+        if (index < 0 || index >= self.capacity) {
             return;
         }
 
-        if (index < self.size / 2) {
+        if (index < self.capacity / 2) {
             int count = 0;
             Node node = <Node>self.head;
             while (count != index) {
@@ -66,7 +66,7 @@ public type LinkedList object {
             }
             return node.value;
         } else {
-            int count = self.size - 1;
+            int count = self.capacity - 1;
             Node node = <Node>self.tail;
             while (count != index) {
                 if (node.prev is ()) {
@@ -87,7 +87,7 @@ public type LinkedList object {
         if (self.head is ()) {
             self.head = node;
             self.tail = self.head;
-            self.size = self.size + 1;
+            self.capacity = self.capacity + 1;
             return;
         }
 
@@ -95,7 +95,7 @@ public type LinkedList object {
         node.next = headNode;
         headNode.prev = node;
         self.head = node;
-        self.size = self.size + 1;
+        self.capacity = self.capacity + 1;
     }
 
     # Appends the specified element to the end of this list.
@@ -106,7 +106,7 @@ public type LinkedList object {
         if (self.tail is ()) {
             self.head = node;
             self.tail = self.head;
-            self.size = self.size + 1;
+            self.capacity = self.capacity + 1;
             return;
         }
 
@@ -114,7 +114,7 @@ public type LinkedList object {
         node.prev = tailNode;
         tailNode.next = node;
         self.tail = node;
-        self.size = self.size + 1;
+        self.capacity = self.capacity + 1;
     }
 
     # Appends the specified element to the specified index of the list.
@@ -122,11 +122,11 @@ public type LinkedList object {
     # + value - Value to be inserted
     # + index - Index of the list, starting from 0
     public function addByIndex(anydata value, int index) {
-        if (index < 0 || index >= self.size) {
+        if (index < 0 || index >= self.capacity) {
             return;
         }
 
-        if (index < self.size / 2) {
+        if (index < self.capacity / 2) {
             int count = 0;
             Node node = <Node>self.head;
             while (count != index) {
@@ -145,7 +145,7 @@ public type LinkedList object {
             }
             node.prev = newNode;
         } else {
-            int count = self.size - 1;
+            int count = self.capacity - 1;
             Node node = <Node>self.tail;
             while (count != index) {
                 if (node.prev is ()) {
@@ -163,7 +163,7 @@ public type LinkedList object {
             }
             node.prev = newNode;
         }
-        self.size = self.size + 1;
+        self.capacity = self.capacity + 1;
     }
 
     # Removes and returns the first element from this list.
@@ -178,7 +178,7 @@ public type LinkedList object {
         self.head = successorOfHead;
         successorOfHead.prev = ();
         head.next = ();
-        self.size = self.size - 1;
+        self.capacity = self.capacity - 1;
 
         return head.value;
     }
@@ -195,7 +195,7 @@ public type LinkedList object {
         self.tail = predecessorOfTail;
         predecessorOfTail.next = ();
         tail.prev = ();
-        self.size = self.size - 1;
+        self.capacity = self.capacity - 1;
 
         return tail.value;
     }
@@ -223,11 +223,11 @@ public type LinkedList object {
     # + index - Index of the list, starting from 0
     # + return - Value of the removed element or `()` if the list is empty or index is invalid
     public function removeByIndex(int index) returns anydata {
-        if (index < 0 || index >= self.size) {
+        if (index < 0 || index >= self.capacity) {
             return;
         }
 
-        if (index < self.size / 2) {
+        if (index < self.capacity / 2) {
             int count = 0;
             Node node = <Node>self.head;
             while (count != index) {
@@ -240,7 +240,7 @@ public type LinkedList object {
             self.removeNode(node);
             return node.value;
         } else {
-            int count = self.size - 1;
+            int count = self.capacity - 1;
             Node node = <Node>self.tail;
             while (count != index) {
                 if (node.prev is ()) {
@@ -270,7 +270,7 @@ public type LinkedList object {
         }
         node.next = ();
         node.prev = ();
-        self.size = self.size - 1;
+        self.capacity = self.capacity - 1;
     }
 
     # Returns true if this list contains the specified element.
@@ -296,14 +296,14 @@ public type LinkedList object {
     #
     # + return - The size of the list
     public function size() returns int {
-        return self.size;
+        return self.capacity;
     }
 
     # Removes all of the elements from this list.
     public function clear() {
         self.head = ();
         self.tail = ();
-        self.size = 0;
+        self.capacity = 0;
     }
 
     # Prints the complete linked list with head and tail in following pattern.
@@ -356,4 +356,4 @@ public type LinkedList object {
 
         return s;
     }
-};
+}
